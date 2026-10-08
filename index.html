@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vozes Trans — Primeiro Coral Trans de São Paulo</title>
+  <meta name="description" content="Vozes Trans é o primeiro coral trans de São Paulo: inclusão e acolhimento de pessoas trans através da música.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Vozes Trans — voltar ao início">
+        <img src="assets/logo.svg" alt="Vozes Trans" width="932" height="408">
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="menu" class="site-nav" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#apoie">Apoie o coral</a>
+        <a href="#inscricoes">Inscrições</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INÍCIO / HERO
+         Para usar a foto definitiva, salve-a como assets/hero.jpg
+         (o placeholder em degradê aparece enquanto ela não existir). -->
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <p class="eyebrow">Coral Vozes Trans</p>
+        <h1>Primeiro Coral Trans de São Paulo</h1>
+        <p class="hero-lede">Música, acolhimento e pertencimento para pessoas trans.</p>
+        <div class="hero-actions">
+          <a class="btn btn-pink" href="https://apoia.se/coralvozestrans?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener">Apoie o coral</a>
+          <a class="btn btn-ghost" href="#sobre">Conheça o projeto</a>
+        </div>
+      </div>
+      <span class="hero-photo-note" aria-hidden="true">Foto de capa em breve</span>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section section-light" id="sobre">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Sobre</p>
+          <h2>Um coro feito de vozes que existem e resistem</h2>
+        </div>
+        <div class="prose">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus auctor fringilla, vestibulum id ligula porta felis euismod semper.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum, aenean lacinia bibendum nulla sed consectetur.</p>
+          <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APOIE O CORAL -->
+    <section class="section section-dark" id="apoie">
+      <div class="container narrow center">
+        <p class="eyebrow eyebrow-light">Apoie o coral</p>
+        <h2>Precisamos da sua ajuda</h2>
+        <p class="lede">Precisamos da sua ajuda financeira para dar continuidade a esse projeto de inclusão e acolhimento de pessoas trans na cidade de São Paulo através da música.</p>
+        <p>O dinheiro será usado para pagar professores e profissionais envolvidos e assim continuar com as aulas e abrir novas vagas.</p>
+        <p class="callout">Doe qualquer valor e apoie nossa iniciativa.</p>
+        <a class="btn btn-pink btn-lg" href="https://apoia.se/coralvozestrans?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener">Quero apoiar no Apoia.se</a>
+      </div>
+    </section>
+
+    <!-- INSCRIÇÕES -->
+    <section class="section section-blush" id="inscricoes">
+      <div class="container">
+        <p class="eyebrow">Inscrições</p>
+        <h2>Venha cantar com a gente</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="card-tag">Inscrições abertas</span>
+            <h3>Vozes Agudas</h3>
+            <p>Faça sua inscrição para o naipe de vozes agudas do coral.</p>
+            <!-- TODO: substituir "#" pelo link do formulário de inscrição -->
+            <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Inscreva-se</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section section-light" id="contato">
+      <div class="container narrow center">
+        <p class="eyebrow">Contato</p>
+        <h2>Fale com a gente</h2>
+        <p>Dúvidas, parcerias, convites para apresentações ou imprensa:</p>
+        <a class="email-link" href="mailto:vozestrans2024@gmail.com">vozestrans2024@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/logo.svg" alt="Vozes Trans" width="932" height="408" class="footer-logo">
+      <p>© <span id="ano">2026</span> Coral Vozes Trans · São Paulo</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
+      nav.classList.toggle('open', !open);
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menu');
+      nav.classList.remove('open');
+    }));
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
