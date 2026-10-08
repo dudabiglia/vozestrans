@@ -155,9 +155,11 @@ a { color: inherit; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* Hero
-   A foto definitiva entra em assets/hero.jpg. Enquanto ela não existir,
-   o degradê da última camada funciona como placeholder. */
+   Foto em paisagem no desktop e em retrato no mobile (ver media query).
+   O degradê da última camada aparece enquanto a foto carrega. */
 .hero {
+  --hero-img: url("../assets/hero-desktop.jpg");
+  --hero-pos: center 30%;
   position: relative;
   min-height: calc(100svh - var(--header-h));
   display: flex;
@@ -165,8 +167,9 @@ a { color: inherit; }
   padding: 6rem 0 5rem;
   color: var(--white);
   background:
-    linear-gradient(180deg, rgba(42,53,80,.15) 0%, rgba(42,53,80,.75) 100%),
-    url("../assets/hero.jpg") center / cover no-repeat,
+    linear-gradient(180deg, rgba(42,53,80,0) 25%, rgba(42,53,80,.55) 55%, rgba(42,53,80,.92) 100%),
+    linear-gradient(90deg, rgba(42,53,80,.45) 0%, rgba(42,53,80,0) 60%),
+    var(--hero-img) var(--hero-pos) / cover no-repeat,
     radial-gradient(circle at 85% 20%, var(--sky) 0, transparent 40%),
     radial-gradient(circle at 15% 80%, var(--pink) 0, transparent 45%),
     linear-gradient(135deg, var(--slate) 0%, var(--slate-deep) 100%);
@@ -176,15 +179,6 @@ a { color: inherit; }
 .hero h1 { color: var(--white); max-width: 14ch; }
 .hero-lede { font-size: 1.25rem; max-width: 36ch; opacity: .95; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
-.hero-photo-note {
-  position: absolute;
-  top: 1.25rem; right: 1.25rem;
-  font-size: .8rem;
-  padding: .35em .9em;
-  border-radius: 999px;
-  border: 1px dashed rgba(255,255,255,.6);
-  color: rgba(255,255,255,.85);
-}
 
 /* Seções */
 .section { padding: clamp(4rem, 10vw, 7rem) 0; }
@@ -311,7 +305,11 @@ a { color: inherit; }
   .site-nav a::after { display: none; }
 
   .two-col { grid-template-columns: 1fr; }
-  .hero { padding: 4rem 0 3rem; }
+  .hero {
+    --hero-img: url("../assets/hero-mobile.jpg");
+    --hero-pos: center top;
+    padding: 4rem 0 3rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
